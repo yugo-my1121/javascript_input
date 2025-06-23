@@ -36,4 +36,49 @@ const userName = 'Yoshipi';
 
 let string = `Hellow ${userName}`; //変数を組み込みたい場合
 string = `Hellow\n${userName}`; //改行を入れたい場合「\n」を使用する
-console.log(string);
+//console.log(string);
+
+//明示的な方変換
+const userInput = '10.9';
+// Numbverの場合は小数に変換
+calcResult = Number(userInput) + 10;
+//console.log(calcResult);
+//porseIntの場合は小数は切り捨て
+calcResult = parseInt(userInput) + 10;
+//console.log(calcResult);
+//parswFloatの場合は小数に変換
+calcResult = parseFloat(userInput) + 10;
+//console.log(calcResult);
+
+// 配列の追加方法
+//pushでも追加できる
+array = [];
+array.push('apple');
+//console.log(array);
+
+//オブジェクト
+const coffee = {
+  name: 'chocolate Mocha',
+  size: 350,
+  isHot: true,
+  toppings: ['Cinnamon', 'Caramel'],
+  nutritions: {
+    calories: 430,
+    sugars: 53,
+  },
+};
+
+//アクセス
+console.log(coffee.size);
+
+//プロパティの追加
+//.(新しいプロパティ名)で追加できる
+coffee.barisuta = 'yugo';
+console.log(coffee);
+
+//nullとundefinedの違い
+// 意味合いは「何もなかった」
+//使いわけ
+//予期しないエラーはundefined 予定通りの場合はnullを使用する
+let userInfo = null; //(例)
+
