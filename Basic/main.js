@@ -32,10 +32,10 @@ result += 1;
 //console.log(result);
 
 //文字列
-const userName = 'Yoshipi';
+// const userName = 'Yoshipi';
 
-let string = `Hellow ${userName}`; //変数を組み込みたい場合
-string = `Hellow\n${userName}`; //改行を入れたい場合「\n」を使用する
+// let string = `Hellow ${userName}`; //変数を組み込みたい場合
+// string = `Hellow\n${userName}`; //改行を入れたい場合「\n」を使用する
 //console.log(string);
 
 //明示的な方変換
@@ -69,12 +69,12 @@ const coffee = {
 };
 
 //アクセス
-console.log(coffee.size);
+// console.log(coffee.size);
 
 //プロパティの追加
 //.(新しいプロパティ名)で追加できる
 coffee.barisuta = 'yugo';
-console.log(coffee);
+// console.log(coffee);
 
 //nullとundefinedの違い
 // 意味合いは「何もなかった」
@@ -82,3 +82,55 @@ console.log(coffee);
 //予期しないエラーはundefined 予定通りの場合はnullを使用する
 let userInfo = null; //(例)
 
+// == ===の違い
+ok = 1 === 1; //型も同じかを判別する
+ok = 1 == '1'; // ==は型の制約がないためtrue判定になる
+console.log(ok);
+
+// && ||
+
+ok = false && true; //どちらもtrueの場合にtrueになる
+
+ok = true || false; // どちらかがtrueの場合にtrueになる
+
+//論理演算子
+//「&&」は厳密に言うと左側がtureの場合は右側を返し、falseの場合は左側を返す
+ok = 'hello' && 'hi'; //hiになる
+
+//「||」は左側がtrueの場合は左を返し、falseの場合は右側を返す
+//(例)ユーザ名が空白の場合に、デフォルトで値を設定する
+let userInputName = '';
+let userName = userInputName || 'User';
+console.log(userName);
+
+//null合体演算子
+userInputName = '';
+userName = userInputName ?? 'User'; //userInputNameがnullの場合は右側が返り、それ以外は左側が返る
+
+//文と式
+//式とは
+//変数の定義で右辺にかけるもの
+
+//文とは
+//実行すると何かするもの
+
+//参考演算子
+ok = true ? 'ok' : 'no'; //trueの場合左側の値を返す
+
+//try catch
+//ユーザ操作など開発者がどうすることもできない、エラーが出ることが予測できる時にtry catch文は使用する
+try {
+  //ここでのエラーはcatchされる
+} catch {
+  //tryでエラーがあった場合に通る
+}
+
+//throw(エラーを発生させることができる)
+//throw 'error';
+
+//関数はオブジェクトに過ぎない
+function add(a, b) {
+  return a + b;
+}
+//本質的な形でログに表示
+console.dir(add);
